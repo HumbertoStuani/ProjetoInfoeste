@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>INFOESTE - 2023</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="text-white">INFOESTE<span class="text-dark">.</span>2023</h1>
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Inicio</a>
+                        <a href="about.html" class="nav-item nav-link">Sobre</a>
+                        <a href="cursos.html" class="nav-item nav-link">Cursos</a>
+                        <a href="programacao.html" class="nav-item nav-link active">Programação</a>
+                        <a href="inscricao.html" class="nav-item nav-link">Inscrições</a>
+                        <a href="contact.html" class="nav-item nav-link">Contato</a>
+                    </div>
+                    <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
+                        data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-primary hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <h1 class="display-4 text-white mb-4 animated slideInRight">Eventos</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Eventos</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 align-self-end text-center text-lg-end">
+                    <img class="img-fluid" src="img/hero-img.png" alt="" style="max-height: 300px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(8, 83, 8, 0.7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn btn-square bg-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-light p-3"
+                            placeholder="Type search keyword">
+                        <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img">
+                        <img class="img-fluid" src="img/linux2.png">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Evento 1</div>
+                    <h1 class="mb-4">17º Festa Linux</h1>
+                    <p class="mb-4">O Linux é um sistema operacional que oferece uma alternativa ao Windows. Ele se destaca por sua estabilidade, 
+                        segurança e confiabilidade. O Linux possui uma ampla variedade de aplicativos gráficos disponíveis, incluindo jogos, editores de texto, 
+                        reprodutores de MP3, programas de mensagens instantâneas, editores de imagens, navegadores da web e muito mais, adaptáveis à capacidade da sua máquina. 
+                        Além disso, o Linux oferece uma extensa gama de programas para servidores, abrangendo desde servidores web e sistemas de banco de dados até linguagens 
+                        de script e ferramentas para administração remota, incluindo servidores de e-mail, entre outros. <br>
+                        Existem razões sólidas para considerar o uso do Linux:</p>
+                    <p class="mb-4"><span class="h6">Estabilidade: </span> O Linux é conhecido por sua estabilidade, com muitas máquinas funcionando por semanas ou meses sem a necessidade de reinicialização. <br>
+                        <span class="h6">Gratuito: </span>  As distribuições do Linux são geralmente gratuitas, permitindo que qualquer pessoa as baixe e use sem custos de licença. <br>
+                        <span class="h6">Deep Learning (45 minutos):</span> Abordaremos redes neurais profundas, arquiteturas populares como CNNs e RNNs, além de suas aplicações em visão computacional e processamento de linguagem natural. <br>
+                        <span class="h6">Liberdade:</span> O Linux é sinônimo de liberdade. Você pode copiar, compartilhar, modificar e redistribuir seu código-fonte, adaptando-o às suas necessidades. <br>
+                        </p>
+
+                    <p>A Festa Linux tem como objetivos: <br>
+                        <span class="h6">Desmistificação:</span> Eliminar a ideia de que o Linux é difícil de usar e complicado de instalar, mostrando que ele oferece alternativas de alta qualidade e confiabilidade em software livre. <br>
+                        <span class="h6">Educação:</span> Auxiliar aqueles que desejam instalar o Linux, mas não sabem por onde começar. Durante o evento, os alunos têm a oportunidade de realizar a instalação do sistema operacional Linux em computadores disponibilizados pela faculdade. <br>
+                        <span class="h6">Capacitação:</span> Além da instalação, os participantes têm a chance de aprender a atualizar, configurar e utilizar o sistema operacional Linux. <br>
+                        <span class="h6">Compartilhamento de Experiências:</span> Promover a troca de experiências entre os participantes e divulgar o Linux na comunidade acadêmica da FIPP.</p> <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img">
+                        <img class="img-fluid" src="img/maratona2.png">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Evento 2</div>
+                    <h1 class="mb-4">17º Maratona de Programação</h1>
+                    <p class="mb-4">Maratona de Programação da Faculdade de Informática de Presidente Prudente é um evento interno que ocorre nos 
+                        laboratórios de informática da FIPP. Este evento desempenha um papel fundamental na integração dos alunos, proporcionando um 
+                        torneio que testa suas habilidades, raciocínio e capacidade de trabalho em equipe. Além da natureza competitiva, a maratona 
+                        tem como objetivo incentivar os alunos a participarem de eventos similares em nível nacional, como a Maratona de Programação 
+                        promovida anualmente pela Sociedade Brasileira de Computação (SBC). <br></p>
+                    <p class="mb-4">A competição consistirá em resolver seis problemas por meio de soluções computacionais 
+                        no menor tempo possível. Alguns dos problemas serão apresentados em inglês. A avaliação das soluções será automatizada através 
+                        do sistema de submissão eletrônica BOCA (Online Contest Administrator - Administrador de Competições Online BOCA), que se baseará nos 
+                        resultados das execuções dos algoritmos de cada equipe.
+                        </p>
+                    <p>A classificação das equipes será determinada pelo número de problemas resolvidos corretamente com base nos casos de teste, pela 
+                        quantidade de submissões dos algoritmos para correção e pelo tempo de entrega. Isso resultará em uma tabela de classificação, que 
+                        estará disponível online para os competidores através do link SCORE no sistema BOCA. A equipe que resolver mais problemas no menor 
+                        tempo será declarada a campeã da maratona.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img">
+                        <img class="img-fluid" src="img/hack2.jpg">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Evento 3</div>
+                    <h1 class="mb-4">Hackathon de Impacto Social e Tecnológico</h1>
+                    <p class="mb-4">O "Hackathon de Impacto Social e Tecnológico" é um evento de 4 horas que reúne mentes criativas para abordar desafios sociais com soluções 
+                        tecnológicas. O objetivo é criar impacto positivo na sociedade por meio da inovação tecnológica. A duração é de 4 horas e o público-alvo são estudantes,
+                         desenvolvedores, designers e empreendedores interessados em resolver problemas sociais com tecnologia. <br>
+                        Atividades do Evento: </p>
+                    <p class="mb-4"><span class="h6">Formação de Equipes: </span> Os participantes formam equipes multidisciplinares. <br>
+                        <span class="h6">Apresentação de Desafios: </span>   Organizações sociais apresentam desafios reais. <br>
+                        <span class="h6">Hackathon:</span>As equipes têm 3 horas para criar soluções tecnológicas para os desafios. <br>
+                        <span class="h6">Workshops:</span> Workshops rápidos sobre tecnologia e empreendedorismo social. <br>
+                        <span class="h6">Apresetações Finais:</span> As equipes apresentam suas soluções. <br>
+                        </p>
+
+                    <p>Objetivos do Evento: <br>
+                        <span class="h6">Promover</span> a colaboração entre tecnologia e organizações sociais. <br>
+                        <span class="h6">Gerar</span> oluções tecnológicas para problemas sociais. <br>
+                        <span class="h6">Estimular</span>  o empreendedorismo social e a inovação. <br>
+                        <span class="h6">Conectar</span>  talentos à causa social.</p> <br>
+
+                    <p class="mb-4">
+                        O evento de 4 horas visa criar soluções tecnológicas práticas para problemas sociais e 
+                        incentivar a conscientização sobre o potencial da tecnologia como catalisadora do impacto social.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <h1 class="text-white">INFOESTE<span class="text-primary">.</span>2023</h1>
+                    </a>
+                    <p class="mb-3">Semana de Computação e Informática da FIPP/Unoeste</p>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Links Populares</h5>
+                    <a class="btn btn-link" href="index.html">Inicio</a>
+                    <a class="btn btn-link" href="about.html">Sobre</a>
+                    <a class="btn btn-link" href="cursos.html">Cursos</a>
+                    <a class="btn btn-link" href="programacao.html">Programação</a>
+                    <a class="btn btn-link" href="inscricao.html">Inscrições</a>
+                    <a class="btn btn-link" href="contact.html">Contato</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                   <img class="img-fluid" src="img/Logo1.png" alt="">
+                </div> 
+
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <img class="img-fluid" src="img/hero-img.png" alt="">
+                 </div> 
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    
+
+
+    
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
