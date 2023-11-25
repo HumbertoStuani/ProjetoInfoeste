@@ -125,35 +125,69 @@
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-                    <form>
+                    <form id="formContact">
+
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="firstNameInput" placeholder="Your Name" required>
                                     <label for="name">Seu nome</label>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name" required>
+                                    <label for="name">Sobrenome</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="cpf" class="form-control" id="cpfInput" placeholder="Your CPF" required>
+                                    <label for="cpf">Seu CPF</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="emailInput" placeholder="Your Email" required>
                                     <label for="email">Seu email</label>
                                 </div>
                             </div>
+
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="categoria-participante"></label>
+                                    <select name="categoria-participante" id="categoria-participante" required>
+                                        <option value="0" selected disabled>Categoria do participante</option>
+                                        <option value="1">Aluno FIPP</option>
+                                        <option value="2">Egressos FIPP</option>
+                                        <option value="3">Aluno ETEC</option>
+                                        <option value="4">Professores e Funcionários FIPP</option>
+                                        <option value="5">Professores e Funcionários Unoeste</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
                                     <label for="subject">Assunto</label>
                                 </div>
                             </div>
+
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
                                     <label for="message">Mensagem</label>
                                 </div>
                             </div>
+
                             <div class="col-12">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Enviar</button>
                             </div>
+
                         </div>
                     </form>
                 </div>
@@ -223,6 +257,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
