@@ -123,18 +123,76 @@ function validateRgNumber(rg) {
 }
 
 
-  function validatePhone(input) {
-    // Remove todos os caracteres não numéricos
-    var phoneNumber = input.value.replace(/\D/g, '');
+function formatAndValidatePhone(input) {
+  // Remove caracteres não numéricos
+  let rawValue = input.value.replace(/[^\d]/g, '');
 
-    // Verifica se o número tem a quantidade correta de dígitos
-    if (phoneNumber.length === 11) {
-        input.setCustomValidity('');
-        document.getElementById(input.id + '-feedback').style.display = 'none';
-    } else {
-        input.setCustomValidity('Telefone inválido');
-        document.getElementById(input.id + '-feedback').style.display = 'block';
-    }
+  // Se o valor estiver vazio, não aplique a máscara
+  if (!rawValue) {
+    input.value = '';
+    input.setCustomValidity('');
+    document.getElementById(input.id + '-feedback').style.display = 'none';
+    return;
+  }
+
+  // Aplica a máscara
+  let formattedValue = `(${rawValue.substring(0, 2)}) ${rawValue.substring(2, 6)}${rawValue.substring(6, 11)}`;
+
+  // Atualiza o valor do campo
+  input.value = formattedValue;
+
+  // Verifica se o número tem a quantidade correta de dígitos
+  if (rawValue.length === 11) {
+      input.setCustomValidity('');
+      document.getElementById(input.id + '-feedback').style.display = 'none';
+  } else {
+      input.setCustomValidity('Telefone inválido');
+      document.getElementById(input.id + '-feedback').style.display = 'block';
+  }
+}
+
+function validateCity() {
+  var selectedCity = document.getElementById("state").value;
+  var cityFeedback = document.getElementById("city-feedback");
+
+  if (selectedCity === "") {
+    cityFeedback.style.display = 'block';
+  } else {
+    cityFeedback.style.display = 'none';
+  }
+}
+
+function validateForm() {
+  var selectedCity = document.getElementById("state").value;
+  var cityFeedback = document.getElementById("city-feedback");
+
+  if (selectedCity === "") {
+    cityFeedback.style.display = 'block';
+    return false; // Impede o envio do formulário
+  }
+  return true; // Permite o envio do formulário
+}
+
+function validateCourse() {
+  var selectedCourse = document.getElementById("country").value;
+  var courseFeedback = document.getElementById("course-feedback");
+
+  if (selectedCourse === "") {
+    courseFeedback.style.display = 'block';
+  } else {
+    courseFeedback.style.display = 'none';
+  }
+}
+
+function validateForm() {
+  var selectedCourse = document.getElementById("country").value;
+  var courseFeedback = document.getElementById("course-feedback");
+
+  if (selectedCourse === "") {
+    courseFeedback.style.display = 'block';
+    return false; // Impede o envio do formulário
+  }
+  return true; // Permite o envio do formulário
 }
 
 function validateAddress() {

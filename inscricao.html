@@ -158,22 +158,22 @@
                         </div>
                     </div>
 
-                      <div class="row">
+                    <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="cpf">Telefone 1</label>
-                            <input type="text" class="form-control" id="telef1" placeholder="(DDD) 9999-9999" maxlength="11" oninput="validatePhone(this)" required>
-                            <div class="invalid-feedback" id="telef1-feedback">
-                                Necessário um telefone válido.
-                            </div>
+                          <label for="telef1">Telefone 1</label>
+                          <input type="text" class="form-control" id="telef1" placeholder="(DDD) 9999-9999" maxlength="15" oninput="formatAndValidatePhone(this)" required>
+                          <div class="invalid-feedback" id="telef1-feedback" style="display: none;">
+                            Necessário um telefone válido.
+                          </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="rg">Telefone 2</label>
-                            <input type="text" class="form-control" id="telef2" placeholder="(DDD) 9999-9999" maxlength="11" oninput="validatePhone(this)">
-                            <div class="invalid-feedback" id="telef2-feedback">
-                                Necessário um telefone válido.
-                            </div>
+                          <label for="telef2">Telefone 2</label>
+                          <input type="text" class="form-control" id="telef2" placeholder="(DDD) 9999-9999" maxlength="15" oninput="formatAndValidatePhone(this)">
+                          <div class="invalid-feedback" id="telef2-feedback" style="display: none;">
+                            Necessário um telefone válido.
+                          </div>
                         </div>
-                    </div>
+                      </div>
 
                       <div class="mb-3">
                         <label for="email">Email</label>
@@ -194,20 +194,20 @@
               
                       <div class="row">
                         <div class="col-md-4 mb-3">
-                          <label for="state">Cidade</label>
-                          <select class="custom-select d-block w-100" id="state" required>
-                            <option value="">Escolha...</option>
-                            <option>Indiana</option>
-                            <option>Presidente Prudente</option>
-                            <option>Presidente Bernardes</option>
-                            <option>Regente Feijó</option>
-                            <option>Martinópolis</option>
-                            <option>Iepê</option>
-                          </select>
-                          <div class="invalid-feedback">
-                            Por favor, selecione um Estado.
+                            <label for="state">Cidade</label>
+                            <select class="custom-select d-block w-100" id="state" required onchange="validateCity()">
+                              <option value="">Escolha...</option>
+                              <option>Indiana</option>
+                              <option>Presidente Prudente</option>
+                              <option>Presidente Bernardes</option>
+                              <option>Regente Feijó</option>
+                              <option>Martinópolis</option>
+                              <option>Iepê</option>
+                            </select>
+                            <div class="invalid-feedback" id="city-feedback">
+                              Por favor, selecione uma cidade.
+                            </div>
                           </div>
-                        </div>
                         <div class="col-md-3 mb-3">
                           <label for="zip">CEP</label>
                           <input type="text" class="form-control" id="zip" placeholder="12345-678" oninput="applyCepMaskAndValidate(this)" maxlength="8" required>
@@ -216,18 +216,18 @@
                           </div>
                         </div>
                         <div class="col-md-5 mb-3">
-                          <label for="country">Curso da Faculdade</label>
-                          <select class="custom-select d-block w-100" id="country" required>
-                            <option value="">Escolha...</option>
-                            <option>Sistemas de Informação</option>
-                            <option>Ciência da Computação</option>
-                            <option>Análise e Desenvolvimento de Sistemas</option>
-                            <option>Engenharia de Software (EAD)</option>
-                          </select>
-                          <div class="invalid-feedback">
-                            Por favor, selecione um País.
+                            <label for="country">Curso da Faculdade</label>
+                            <select class="custom-select d-block w-100" id="country" required onchange="validateCourse()">
+                              <option value="">Escolha...</option>
+                              <option>Sistemas de Informação</option>
+                              <option>Ciência da Computação</option>
+                              <option>Análise e Desenvolvimento de Sistemas</option>
+                              <option>Engenharia de Software (EAD)</option>
+                            </select>
+                            <div class="invalid-feedback" id="course-feedback">
+                              Por favor, selecione um curso.
+                            </div>
                           </div>
-                        </div>
                       </div>
                       <hr class="mb-4">
                       <div class="custom-control custom-checkbox">
@@ -272,6 +272,22 @@
                           </div> -->
                       </div>
 
+                    <br>
+                    <div>
+                        <table class="table table-sm text-center">
+                            <thead>
+                              <tr class="text-center text-dark">
+                                <th scope="col" style="color: #118f40;"><h4>Mini Cursos selecionados</h4></th>
+                              </tr>
+                            </thead>
+                            <tbody id="lista-cursos">
+
+                            </tbody>
+                          </table>
+                    </div>
+
+                    <br><br>
+
                       <hr class="mb-4">
                       <h4 class="mb-3">Palestras</h4>
                       
@@ -298,9 +314,23 @@
                         </div> -->
                       </div>
 
+                      <div>
+                        <table class="table table-sm text-center">
+                            <thead>
+                              <tr class="text-center text-dark">
+                                <th scope="col" style="color: #118f40;"><h4>Palestras selecionadas</h4></th>
+                              </tr>
+                            </thead>
+                            <tbody id="lista-palestra">
 
-                     
+                            </tbody>
+                          </table>
+                    </div>
+
+                    <br><br><br>
                       <hr class="mb-4">
+
+                      
                       <button class="btn btn-primary btn-lg btn-block" type="submit">Continuar</button>
                     </form>
                   </div>
@@ -309,9 +339,6 @@
     </div>
     <!-- Case End -->
 
-    <div>
-       <ul id="lista-cursos"></ul>
-    </div>
 
     <div>
         <ul id="lista-palestra"></ul>
@@ -462,24 +489,6 @@
         });
       });
 
-      document.addEventListener('DOMContentLoaded', function() {
-      // Seleciona os campos e o botão de envio
-      const campos = document.querySelectorAll('[required]');
-      const submitBtn = document.getElementById('submitBtn');
-
-      // Adiciona um ouvinte de eventos de entrada a cada campo
-      campos.forEach(function(campo) {
-        campo.addEventListener('input', function() {
-          // Verifica se todos os campos obrigatórios estão preenchidos
-          const todosPreenchidos = Array.from(campos).every(function(c) {
-            return c.value.trim() !== '';
-          });
-
-          // Atualiza o estado do botão de envio com base na validação
-          submitBtn.disabled = !todosPreenchidos;
-        });
-      });
-      });
 
     const cursos = [
         {id: 1, nome: "Machine Learning"},
@@ -532,7 +541,7 @@
             listaCurso.innerHTML = "";
             checkboxesCursos.forEach(curso => {
                 if(curso.checked)
-                    listaCurso.innerHTML += `<li>${curso.value}</li>`;
+                    listaCurso.innerHTML += `<th scope="row">${curso.value}</th>`;
             });
         });
     });
@@ -548,7 +557,7 @@
             listaPalestra.innerHTML = "";
             checkboxesPalestras.forEach(palestra => {
                 if(palestra.checked)
-                    listaPalestra.innerHTML += `<li>${palestra.value}</li>`;
+                    listaPalestra.innerHTML += `<th scope="row">${palestra.value}</th>`;
             });
         });
     });
