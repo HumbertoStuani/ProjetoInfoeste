@@ -124,58 +124,75 @@
             </div>
             <div class="container">
                   <div class="col-md-8 order-md-1 align-items-center">
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" id="form-insc">
                       <div class="row">
                         <div class="col-md-6 mb-3">
-                          <label for="firstName">Nome</label>
-                          <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                          <div class="invalid-feedback">
-                            Necessário um nome válido.
-                          </div>
+                            <label for="firstName">Nome</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Digite seu nome..." required>
+                            <div class="invalid-feedback" id="firstNameFeedback">
+                                Necessário um nome válido.
+                            </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                          <label for="lastName">Sobrenome</label>
-                          <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                          <div class="invalid-feedback">
-                            Necessário um sobrenome válido.x'
-                          </div>
+                            <label for="lastName">Sobrenome</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Digite seu sobrenome..." required>
+                            <div class="invalid-feedback" id="lastNameFeedback">
+                                Necessário um sobrenome válido.
+                            </div>
                         </div>
-                      </div>
+                    </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cpf">CPF</label>
+                            <input type="text" class="form-control" id="cpf" placeholder="123.456.789-00" maxlength="14" oninput="applyCpfMask(this); validateCpf(this);" required>
+                            <div class="invalid-feedback" id="cpf-feedback">
+                                Necessário um CPF válido.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="rg">RG</label>
+                            <input type="text" class="form-control" id="rg" placeholder="12.345.678-9" maxlength="12" oninput="applyRgMask(this); validateRg(this);" required>
+                            <div class="invalid-feedback" id="rg-feedback">
+                                Necessário um RG válido.
+                            </div>
+                        </div>
+                    </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cpf">Telefone 1</label>
+                            <input type="text" class="form-control" id="telef1" placeholder="(DDD) 9999-9999" maxlength="11" oninput="validatePhone(this)" required>
+                            <div class="invalid-feedback" id="telef1-feedback">
+                                Necessário um telefone válido.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="rg">Telefone 2</label>
+                            <input type="text" class="form-control" id="telef2" placeholder="(DDD) 9999-9999" maxlength="11" oninput="validatePhone(this)">
+                            <div class="invalid-feedback" id="telef2-feedback">
+                                Necessário um telefone válido.
+                            </div>
+                        </div>
+                    </div>
+
                       <div class="mb-3">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="voce@example.com">
-                        <div class="invalid-feedback">
+                        <input type="email" class="form-control" id="email" placeholder="voce@example.com" oninput="validateEmail(this)" required>
+                        <div class="invalid-feedback" id="emailFeedback">
                           Por favor, insira um email válido.
                         </div>
                       </div>
               
                       <div class="mb-3">
                         <label for="address">Endereço</label>
-                        <input type="text" class="form-control" id="address" placeholder="Rua ..." required>
-                        <div class="invalid-feedback">
-                          Endereço é obrigatório.
+                        <input type="text" class="form-control" id="address" placeholder="Rua ..." oninput="validateAddress()" required>
+                        <div class="invalid-feedback" id="addressFeedback">
+                            Endereço é obrigatório.
                         </div>
                       </div>
               
-                      <div class="mb-3">
-                        <label for="address2">Endereço 2<span class="text-muted">(Opcional)</span></label>
-                        <input type="text" class="form-control" id="address2" placeholder="Apartamento ... ">
-                      </div>
               
                       <div class="row">
-                        <div class="col-md-5 mb-3">
-                          <label for="country">Curso da Faculdade</label>
-                          <select class="custom-select d-block w-100" id="country" required>
-                            <option value="">Escolha...</option>
-                            <option>Sistemas de Informação</option>
-                            <option>Ciência da Computação</option>
-                            <option>Análise e Desenvolvimento de Sistemas</option>
-                            <option>Engenharia de Software (EAD)</option>
-                          </select>
-                          <div class="invalid-feedback">
-                            Por favor, selecione um País.
-                          </div>
-                        </div>
                         <div class="col-md-4 mb-3">
                           <label for="state">Cidade</label>
                           <select class="custom-select d-block w-100" id="state" required>
@@ -193,9 +210,22 @@
                         </div>
                         <div class="col-md-3 mb-3">
                           <label for="zip">CEP</label>
-                          <input type="text" class="form-control" id="zip" placeholder="" required>
+                          <input type="text" class="form-control" id="zip" placeholder="12345-678" oninput="applyCepMaskAndValidate(this)" maxlength="8" required>
+                          <div class="invalid-feedback" id="zipFeedback">
+                              CEP inválido.
+                          </div>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                          <label for="country">Curso da Faculdade</label>
+                          <select class="custom-select d-block w-100" id="country" required>
+                            <option value="">Escolha...</option>
+                            <option>Sistemas de Informação</option>
+                            <option>Ciência da Computação</option>
+                            <option>Análise e Desenvolvimento de Sistemas</option>
+                            <option>Engenharia de Software (EAD)</option>
+                          </select>
                           <div class="invalid-feedback">
-                            CEP obrigatório.
+                            Por favor, selecione um País.
                           </div>
                         </div>
                       </div>
@@ -204,96 +234,72 @@
                         <input type="checkbox" class="custom-control-input" id="save-info">
                         <label class="custom-control-label" for="save-info">Salvar esta informação da próxima vez</label>
                       </div>
+
                       <hr class="mb-4">
                       <h4 class="mb-3">Mini Cursos</h4>
-                      <h6 class="mb-2">Máximo 2!</h6>
-                      <div class="d-block my-3">
-                        <div class="custom-control custom-radio">
-                          <input id="curso" name="curso" type="checkbox" class="custom-control-input" checked required>
-                          <label class="custom-control-label" for="credit">Inteligência Artificial</label>
+                      <div class="d-block my-3" id="formDados1">
+                        <!-- <div class="custom-control custom-radio">
+                          <input id="inputIA" name="curso" type="checkbox" class="custom-control-input">
+                          <label class="custom-control-label" for="inputIA">Inteligência Artificial</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input id="curso" name="curso" type="checkbox" class="custom-control-input" checked required>
-                          <label class="custom-control-label" for="credit">Machine Learning</label>
+                          <input id="inputML" name="curso" type="checkbox" class="custom-control-input">
+                          <label class="custom-control-label" for="inputML">Machine Learning</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input id="curso" name="curso" type="checkbox" class="custom-control-input" required>
-                          <label class="custom-control-label" for="debit">Maratona de Programação</label>
+                          <input id="inputMP" name="curso" type="checkbox" class="custom-control-input">
+                          <label class="custom-control-label" for="inputMP">Maratona de Programação</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input id="curso" name="curso" type="checkbox" class="custom-control-input" required>
-                          <label class="custom-control-label" for="paypal">Pensamento Tecnológico e Inovações</label>
+                          <input id="inputPTI" name="curso" type="checkbox" class="custom-control-input">
+                          <label class="custom-control-label" for="inputPTI">Pensamento Tecnológico e Inovações</label>
                         </div>
+                        <div class="custom-control custom-radio">
+                            <input id="inputGG" name="curso" type="checkbox" class="custom-control-input">
+                            <label class="custom-control-label" for="inputGG">Git e GitHub</label>
+                        </div>
+                          <div class="custom-control custom-radio">
+                            <input id="inputMB" name="curso" type="checkbox" class="custom-control-input">
+                            <label class="custom-control-label" for="inputMB">MongoDB</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input id="inputIPY" name="curso" type="checkbox" class="custom-control-input">
+                            <label class="custom-control-label" for="inputIPY">Introdução a Python</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input id="inputITY" name="curso" type="checkbox" class="custom-control-input">
+                            <label class="custom-control-label" for="inputITY">Introdução a TypeScript</label>
+                          </div> -->
                       </div>
 
                       <hr class="mb-4">
                       <h4 class="mb-3">Palestras</h4>
                       
-                      <div class="d-block my-3">
-                        <div class="custom-control custom-radio">
-                          <input id="palestra" name="palestra" type="radio" class="custom-control-input" checked required>
-                          <label class="custom-control-label" for="credit">Amazon</label>
+                      <div class="d-block my-3" id="formDados2">
+                        <!-- <div class="custom-control custom-radio">
+                          <input id="inputAMZ" name="palestra" type="checkbox" class="custom-control-input">
+                          <label class="custom-control-label" for="inputAMZ">Amazon</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input id="palestra" name="palestra" type="radio" class="custom-control-input" required>
-                          <label class="custom-control-label" for="debit">Vericode</label>
+                          <input id="inputVC" name="palestra" type="checkbox" class="custom-control-input">
+                          <label class="custom-control-label" for="inputVC">Vericode</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input id="palestra" name="palestra" type="radio" class="custom-control-input" required>
-                          <label class="custom-control-label" for="paypal">Google</label>
+                          <input id="inputGOG" name="palestra" type="checkbox" class="custom-control-input">
+                          <label class="custom-control-label" for="inputGOG">Google</label>
                         </div>
+                        <div class="custom-control custom-radio">
+                            <input id="inputME" name="palestra" type="checkbox" class="custom-control-input">
+                            <label class="custom-control-label" for="inputME">Meta</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="inputTL" name="palestra" type="checkbox" class="custom-control-input">
+                            <label class="custom-control-label" for="inputTL">Tesla</label>
+                        </div> -->
                       </div>
 
-                      <hr class="mb-4">
-                      <h4 class="mb-3">Pagamento</h4>
-                      
-                      <div class="d-block my-3">
-                        <div class="custom-control custom-radio">
-                          <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                          <label class="custom-control-label" for="credit">Cartão de Crédito</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                          <label class="custom-control-label" for="debit">Cartão de Débito</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                          <label class="custom-control-label" for="paypal">PIX</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6 mb-3">
-                          <label for="cc-name">Nome do Titular</label>
-                          <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                          <small class="text-muted">Nome completo do cartão</small>
-                          <div class="invalid-feedback">
-                            Nome obrigatório.
-                          </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                          <label for="cc-number">Número do Cartão</label>
-                          <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                          <div class="invalid-feedback">
-                            Número do Cartão obrigatório.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-3 mb-3">
-                          <label for="cc-expiration">Vencimento</label>
-                          <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                          <div class="invalid-feedback">
-                            Data de Vencimento obrigatório.
-                          </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                          <label for="cc-cvv">CVV</label>
-                          <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                          <div class="invalid-feedback">
-                            Codígo de Segurança obrigatório.
-                          </div>
-                        </div>
-                      </div>
+
+                     
                       <hr class="mb-4">
                       <button class="btn btn-primary btn-lg btn-block" type="submit">Continuar</button>
                     </form>
@@ -302,6 +308,14 @@
         </div>
     </div>
     <!-- Case End -->
+
+    <div>
+       <ul id="lista-cursos"></ul>
+    </div>
+
+    <div>
+        <ul id="lista-palestra"></ul>
+     </div>
 
 
     <!-- FAQs Start -->
@@ -432,6 +446,121 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
 
+    <!-- SCRIPTS VALIDAÇÃO JS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var firstNameInput = document.getElementById("firstName");
+        var lastNameInput = document.getElementById("lastName");
+
+        // Adiciona os ouvintes de evento para validação imediata
+        firstNameInput.addEventListener('input', function() {
+            validateInput(firstNameInput, "firstNameFeedback");
+        });
+
+        lastNameInput.addEventListener('input', function() {
+            validateInput(lastNameInput, "lastNameFeedback");
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+      // Seleciona os campos e o botão de envio
+      const campos = document.querySelectorAll('[required]');
+      const submitBtn = document.getElementById('submitBtn');
+
+      // Adiciona um ouvinte de eventos de entrada a cada campo
+      campos.forEach(function(campo) {
+        campo.addEventListener('input', function() {
+          // Verifica se todos os campos obrigatórios estão preenchidos
+          const todosPreenchidos = Array.from(campos).every(function(c) {
+            return c.value.trim() !== '';
+          });
+
+          // Atualiza o estado do botão de envio com base na validação
+          submitBtn.disabled = !todosPreenchidos;
+        });
+      });
+      });
+
+    const cursos = [
+        {id: 1, nome: "Machine Learning"},
+        {id: 2, nome: "Maratona de Programação"},
+        {id: 3, nome: "Pensamento Tecnológico e Inovações"},
+        {id: 4, nome: "Inteligência Artificial"},
+        {id: 5, nome: "Git e GitHub"},
+        {id: 6, nome: "MongoDB"},
+        {id: 7, nome: "Introdução a Python"},
+        {id: 8, nome: "Introdução a TypeScript"}
+
+    ];
+
+    var divCursos = document.getElementById('formDados1');
+    var modeloCurso = `
+        <div class="custom-control custom-radio">
+            <input id="input-curso-{{ID}}" name="curso" type="checkbox" class="custom-control-input check-curso" value="{{CURSO}}">
+            <label class="custom-control-label" for="input-curso-{{ID}}">{{CURSO}}</label>
+        </div>
+    `;
+
+    cursos.forEach(curso => {
+        var curso = modeloCurso.replace('{{ID}}', curso.id).replaceAll('{{CURSO}}', curso.nome);
+        divCursos.innerHTML += curso;
+    });
+
+    const palestras = [
+        {id: 1, nome: "Amazon"},
+        {id: 2, nome: "Vericode"},
+        {id: 3, nome: "Google"},
+        {id: 4, nome: "Meta"},
+        {id: 5, nome: "Tesla"},
+        {id: 6, nome: "RubCube"},
+        {id: 7, nome: "OpenAI"},
+        {id: 8, nome: "Microsoft"}
+
+    ];
+
+    var divPalestras = document.getElementById('formDados2');
+
+    palestras.forEach(palestra => {
+        var palestra = modeloCurso.replace('{{ID}}', palestra.id).replaceAll('{{CURSO}}', palestra.nome);
+        divPalestras.innerHTML += palestra;
+    });
+
+    var listaCurso = document.getElementById('lista-cursos');
+    var checkboxesCursos = Array.from(divCursos.querySelectorAll('.check-curso'));
+    checkboxesCursos.forEach(check => {
+        check.addEventListener('change', function(){
+            listaCurso.innerHTML = "";
+            checkboxesCursos.forEach(curso => {
+                if(curso.checked)
+                    listaCurso.innerHTML += `<li>${curso.value}</li>`;
+            });
+        });
+    });
+
+
+
+
+
+    var listaPalestra = document.getElementById('lista-palestra');
+    var checkboxesPalestras = Array.from(divPalestras.querySelectorAll('.check-curso'));
+    checkboxesPalestras.forEach(check => {
+        check.addEventListener('change', function(){
+            listaPalestra.innerHTML = "";
+            checkboxesPalestras.forEach(palestra => {
+                if(palestra.checked)
+                    listaPalestra.innerHTML += `<li>${palestra.value}</li>`;
+            });
+        });
+    });
+
+
+
+
+
+  
+    
+
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -442,8 +571,12 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
+    <script src="js/inscricao.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
     <!-- Template Javascript -->
+
     <script src="js/main.js"></script>
 </body>
 
